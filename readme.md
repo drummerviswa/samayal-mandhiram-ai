@@ -4,6 +4,11 @@
 
 ---
 
+## 📸 Screenshots
+<img src="screenshot.png" width="200" />
+
+---
+
 ## 🧠 About the App
 
 **Samayal Mandhiram AI** is a smart cooking companion built with modern technologies to elevate your culinary experience. Whether you’re a home cook or a kitchen newbie, this app helps you:
@@ -130,10 +135,6 @@ In your Strapi backend project, make sure the plugin configuration is correctly 
 
 You can get these from your [Cloudinary dashboard](https://cloudinary.com/console).
 
----
-
-## 📸 Screenshots
-<img src="screenshot.png" width="200" />
 ---
 
 ## 🤝 Contributing
