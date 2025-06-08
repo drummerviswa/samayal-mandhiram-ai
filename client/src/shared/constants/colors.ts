@@ -1,0 +1,8 @@
+export default {
+	PRIMARY: "#019267",
+	SECONDARY: "#B4E197",
+	WHITE: "#FFFFFF",
+	BLACK: "#000000",
+	GRAY: "#808080",
+	ACCENT: "#5CB338"
+};

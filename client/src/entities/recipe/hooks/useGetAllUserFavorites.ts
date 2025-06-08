@@ -1,0 +1,58 @@
+import { useEffect, useRef, useState } from "react";
+
+import { GetAllUserFavorites } from "../api";
+import { IFavorite } from "../types";
+
+interface Props {
+	email: string;
+	skip?: boolean;
+}
+
+export const useGetAllUserFavorites = ({ email, skip }: Props) => {
+	const [data, setData] = useState<IFavorite[]>([]);
+	const [isLoading, setIsLoading] = useState(true);
+	const [isRefreshing, setIsRefreshing] = useState(false);
+	const [error, setError] = useState<null | string>(null);
+	const isMounted = useRef(true);
+
+	const fetchData = async (isRefetch = false) => {
+		try {
+			if (isRefetch) {
+				setIsRefreshing(true);
+			} else {
+				setIsLoading(true);
+			}
+			const response = await GetAllUserFavorites(email);
+			if (isMounted.current) {
+				setData(response?.data?.data);
+			}
+		} catch (err: any) {
+			if (isMounted.current) {
+				setError(err.message || "Error");
+			}
+		} finally {
+			if (isMounted.current) {
+				setIsLoading(false);
+				setIsRefreshing(false);
+			}
+		}
+	};
+
+	useEffect(() => {
+		if (skip) return;
+
+		isMounted.current = true;
+		fetchData();
+		return () => {
+			isMounted.current = false;
+		};
+	}, [skip, email]);
+
+	return {
+		data,
+		isLoading,
+		isRefreshing,
+		error,
+		refetch: () => fetchData(true)
+	};
+};

@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Samayal Mandhiram AI",
+    "slug": "samayal-mandhiram-ai",
+    "description": "An AI-powered cooking assistant that helps you find recipes and manage your kitchen.",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/mylogo.png",
+    "scheme": "smartcookai",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/mylogo.png",
+      "resizeMode": "native",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/mylogo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/mylogo.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
